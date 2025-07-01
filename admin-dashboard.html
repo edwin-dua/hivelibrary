@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR -->
+        <header class="header">
+            <div>
+                <i class="fas fa-book-open"></i>
+                <h1>Library <br>Management <br>System</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#" class="active" data-section="dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                    <li><a href="#" data-section="books"><i class="fas fa-book"></i> <span>Books</span></a></li>
+                    <li><a href="#" data-section="members"><i class="fas fa-users"></i> <span>Members</span></a></li>
+                    <li><a href="#" data-section="transactions"><i class="fas fa-exchange-alt"></i> <span>Transactions</span></a></li>
+                    <li><a href="admin.html" data-section="logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h2><i class="fa-solid fa-user-tie"></i> Admin Dashboard</h2>
+                
+                <!-- Stats Cards -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Books</h3>
+                            <p id="total-books">1,245</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Members</h3>
+                            <p id="total-members">328</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Borrowed Books</h3>
+                            <p id="borrowed-books">200</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Overdue Books</h3>
+                            <p id="overdue-books">25</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <div class="recent-activity">
+                        <h3><i class="fas fa-history"></i> Recent Activity</h3>
+                        <ul id="activity-list">
+                            <li>
+                                <i class="fas fa-book-reader"></i>
+                                <span>Kojo Mensah borrowed "The Great Gatsby"</span>
+                                <small>2 hours ago</small>
+                            </li>
+                            <li>
+                                <i class="fas fa-book"></i>
+                                <span>New book added: "Son of Umbele"</span>
+                                <small>5 hours ago</small>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-plus"></i>
+                                <span>New member registered: Bruce Wayne</span>
+                                <small>1 day ago</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="quick-actions">
+                        <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                        <div class="actions-buttons">
+                            <button class="action-btn" id="add-bool-btn">
+                                <i class="fas fa-plus"></i> Add Book
+                            </button>
+                            <button class="action-btn" id="add-member-btn">
+                                <i class="fas fa-user-plus"></i> Add Member
+                            </button>
+                            <button class="action-btn" id="issue-book-btn">
+                                <i class="fas fa-hand-holding"></i> Issue Book
+                            </button>
+                            <button class="action-btn" id="announcements">
+                                <i class="fas fa-bullhorn"></i> Announcements
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Books Section -->
+            <section id="books" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-book"></i> Book Management</h2>
+                    <div class="search-bar">
+                        <input type="text" id="book-search" placeholder="Search books...">
+                        <button id="search-book-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="filter-options">
+                    <select id="book-filter">
+                        <option value="all">All Books</option>
+                        <option value="available">Available</option>
+                        <option value="borrowed">Borrowed</option>
+                        <option value="overdue">Overdue</option>
+                    </select>
+                </div>
+                <div class="table-container">
+                    <table id="books-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>ISBN</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BK001</td>
+                                <td>The Great Gatsby</td>
+                                <td>F. Scott Fitzgerald</td>
+                                <td>9780743273565</td>
+                                <td>Fiction</td>
+                                <td><span class="status available">5 (Available)</span></td>
+                                <td>
+                                    <button class="action-icon edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-icon delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BK002</td>
+                                <td>To Kill a Mockingbird</td>
+                                <td>Harper Lee</td>
+                                <td>9780061120084</td>
+                                <td>Fiction</td>
+                                <td><span class="status borrowed">2 (Available of 5)</span></td>
+                                <td>
+                                    <button class="action-icon edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-icon delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>    
+                            </tr>
+                            <tr>
+                                <td>BK003</td>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>9780451524935</td>
+                                <td>Science Fiction</td>
+                                <td><span class="status overdue">0 (Available of 3)</span></td>
+                                <td>
+                                    <button class="action-icon edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-icon delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                    <span class="page-number">1</span>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+             </section>
+
+             <!-- Members Section -->
+             <section id="members" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> Member Management</h2>
+                    <div class="search-bar">
+                        <input type="text" id="member-search" placeholder="Search members...">
+                        <button id="search-member-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="filter-options">
+                    <select id="member-filter">
+                        <option value="all">All Members</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="overdue">With Overdue Books</option>
+                    </select>
+                </div>
+                <div class="table-container">
+                    <table id="members-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Membership</th>
+                                <th>Borrowed</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MB001</td>
+                                <td>John Doe</td>
+                                <td>john@example.com</td>
+                                <td>(233) 5433-7839-0</td>
+                                <td>Premium</td>
+                                <td>3</td>
+                                <td>
+                                    <button class="action-icon edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-icon delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MB002</td>
+                                <td>Jane Smith</td>
+                                <td>jane@example.com</td>
+                                <td>(233) 5367-8980-1</td>
+                                <td>Standard</td>
+                                <td>0</td>
+                                <td>
+                                    <button class="action-icon edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-icon delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MB003</td>
+                                <td>Robert Johnson</td>
+                                <td>robert@example.com</td>
+                                <td>(345) 5078-9061-2</td>
+                                <td>Standard</td>
+                                <td>1</td>
+                                <td>
+                                    <button class="action-icon edit-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-icon delete-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                    <span class="page-number">1</span>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+             </section>
+
+             <!-- Transactions Section -->
+            <section id="transactions" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-exchange-alt"></i> Transaction Management</h2>
+                    <div class="search-bar">
+                        <input type="text" id="transaction-search" placeholder="Search transactions...">
+                        <button id="search-transaction-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="filter-options">
+                    <select id="transaction-filter">
+                        <option value="all">All Transactions</option>
+                        <option value="active">Active Loans</option>
+                        <option value="overdue">Overdue Loans</option>
+                        <option value="returned">Returned</option>
+                    </select>
+                    <input type="date" id="transaction-date-filter">
+                </div>
+                <div class="table-container">
+                    <table id="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Book</th>
+                                <th>Member</th>
+                                <th>Issue Date</th>
+                                <th>Due Date</th>
+                                <th>Return Date</th>
+                                <th>Status</th>
+                                <th>Fine</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TR001</td>
+                                <td>To Kill a Mockingbird</td>
+                                <td>John Doe</td>
+                                <td>2023-05-10</td>
+                                <td>2023-05-24</td>
+                                <td>-</td>
+                                <td><span class="status borrowed">Borrowed</span></td>
+                                <td>₵0.00</td>
+                                <td>
+                                    <button class="action-icon return-btn" title="Return"><i class="fas fa-undo"></i></button>
+                                    <button class="action-icon pay-btn" title="Pay Fine"><i class="fas fa-dollar-sign"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TR002</td>
+                                <td>1984</td>
+                                <td>Robert Johnson</td>
+                                <td>2023-04-15</td>
+                                <td>2023-04-29</td>
+                                <td>2023-05-02</td>
+                                <td><span class="status returned">Returned</span></td>
+                                <td>₵3.00</td>
+                                <td>
+                                    <button class="action-icon return-btn" title="Return"><i class="fas fa-undo"></i></button>
+                                    <button class="action-icon pay-btn" title="Pay Fine"><i class="fas fa-dollar-sign"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TR003</td>
+                                <td>The Great Gatsby</td>
+                                <td>Jane Smith</td>
+                                <td>2023-05-01</td>
+                                <td>2023-05-15</td>
+                                <td>-</td>
+                                <td><span class="status overdue">Overdue</span></td>
+                                <td>₵5.00</td>
+                                <td>
+                                    <button class="action-icon return-btn" title="Return"><i class="fas fa-undo"></i></button>
+                                    <button class="action-icon pay-btn" title="Pay Fine"><i class="fas fa-dollar-sign"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                    <span class="page-number">1</span>
+                    <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <!--MODALS -->
+            <!-- Add Book Modal -->
+            <div id="add-book-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2><i class="fas fa-book"></i> Add New Book</h2>
+                    <form id="add-book-form">
+                        <div class="form-group">
+                            <label for="book-title">Title</label>
+                            <input type="text" id="book-title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-author">Author</label>
+                            <input type="text" id="book-author" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-isbn">ISBN</label>
+                            <input type="text" id="book-isbn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-category">Category</label>
+                            <select id="book-category" required>
+                                <option value="">Select Category</option>
+                                <option value="fiction">Fiction</option>
+                                <option value="non-fiction">Non-Fiction</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-publisher">Publisher</label>
+                            <input type="text" id="book-publisher">
+                        </div>
+                        <div class="form-group">
+                            <label for="book-year">Publication Year</label>
+                            <input type="number" id="book-year" min="1900" max="2023">
+                        </div>
+                        <div class="form-group">
+                            <label for="book-copies">Number of Copies</label>
+                            <input type="number" id="book-copies" min="1" value="1">
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="submit-btn">Add Book</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Add Member Modal -->
+            <div id="add-member-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2><i class="fas fa-user-plus"></i> Add New Member</h2>
+                    <form id="add-member-form">
+                        <div class="form-group">
+                            <label for="member-name">Full Name</label>
+                            <input type="text" id="member-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="member-email">Email</label>
+                            <input type="email" id="member-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="member-phone">Phone</label>
+                            <input type="tel" id="member-phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="member-address">Address</label>
+                            <textarea id="member-address" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="member-type">Membership Type</label>
+                            <select id="member-type" required>
+                                <option value="">Select Type</option>
+                                <option value="standard">Standard</option>
+                                <option value="premium">Premium</option>
+                                <option value="student">Student</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="submit-btn">Add Member</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Issue Book Modal -->
+            <div id="issue-book-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2><i class="fas fa-hand-holding"></i> Issue Book</h2>
+                    <form id="issue-book-form">
+                        <div class="form-group">
+                            <label for="issue-book">Select Book</label>
+                            <select id="issue-book" required>
+                                <option value="">Select Book</option>
+                                <option value="BK001">The Great Gatsby (5 available)</option>
+                                <option value="BK002">To Kill a Mockingbird (2 available of 5)</option>
+                                <option value="BK003">1984 (0 available of 3)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="issue-member">Select Member</label>
+                            <select id="issue-member" required>
+                                <option value="">Select Member</option>
+                                <option value="MB001">John Doe</option>
+                                <option value="MB002">Jane Smith</option>
+                                <option value="MB003">Robert Johnson</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="issue-date">Issue Date</label>
+                            <input type="date" id="issue-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="due-date">Due Date</label>
+                            <input type="date" id="due-date" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="submit-btn">Issue Book</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>
