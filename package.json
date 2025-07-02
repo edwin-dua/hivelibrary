@@ -1,0 +1,11 @@
+{
+  "name": "library-app",
+  "version": "1.0.0",
+  "description": "A static library web app",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
