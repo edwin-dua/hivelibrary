@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Hive Library</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Book Hive Library</h1>
+            <p>Where stories buzz and knowledge thrives</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#recommendations">Book Recommendations</a></li>
+            <li><a href="#categories">Our Collection</a></li>
+            <li><a href="#reviews">Library Reviews</a></li>
+            <li><a href="#hours">Opening Hours</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>Explore Our Vast Collection</h2>
+            <p>Thousands of books across diverse genres waiting to be discovered by you.</p>
+        </div>
+    </section>
+    
+    <section id="recommendations" class="container">
+        <h2 class="section-title">This Month's Recommendations</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/silent.jpg" alt="Book cover">
+                <div class="card-content">
+                    <h3>The Silent Patient</h3>
+                    <p>A psychological thriller about a woman who shoots her husband and then stops speaking.</p>
+                    <p><strong>Genre:</strong> Thriller, Mystery</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="images/educated.jpg" alt="Book cover">
+                <div class="card-content">
+                    <h3>Educated</h3>
+                    <p>A memoir about a woman who leaves her survivalist family and goes on to earn a PhD.</p>
+                    <p><strong>Genre:</strong> Memoir, Biography</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="images/hail.jpg" alt="Book cover">
+                <div class="card-content">
+                    <h3>Project Hail Mary</h3>
+                    <p>A science fiction story about a lone astronaut who must save the earth from disaster.</p>
+                    <p><strong>Genre:</strong> Science Fiction</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="images/midnight.jpg" alt="Book cover">
+                <div class="card-content">
+                    <h3>The Midnight Library</h3>
+                    <p>A novel about a library between life and death where each book represents a different life path.</p>
+                    <p><strong>Genre:</strong> Fiction, Fantasy</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/gatsby.jpg" alt="Book cover">
+                <div class="card-content">
+                    <h3>The Great Gatsby</h3>
+                    <p>The novel depicts first-person narrator Nick Carraway's interactions with Jay Gatsby, a mysterious millionaire.</p>
+                    <p><strong>Genre:</strong> Novel, Literal Fiction</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/nagi.jpg" alt="Book cover">
+                <div class="card-content">
+                    <h3>Blue Lock</h3>
+                    <p>Yoichi Isagi, a high school soccer player, who joins a training program called "Blue Lock" designed to create the world's greatest striker.</p>
+                    <p><strong>Genre:</strong> Manga, Sports, Thriller</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="categories" style="background-color: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Our Book Collection</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Click on any category to view sample books from our collection</p>
+            
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>Fiction</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>To Kill a Mockingbird</h4>
+                            <p>Harper Lee</p>
+                            <p>Classic novel about racial injustice</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>1984</h4>
+                            <p>George Orwell</p>
+                            <p>Dystopian political fiction</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Great Gatsby</h4>
+                            <p>F. Scott Fitzgerald</p>
+                            <p>Jazz Age tragedy</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Pride and Prejudice</h4>
+                            <p>Jane Austen</p>
+                            <p>Classic romance</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Catcher in the Rye</h4>
+                            <p>J.D. Salinger</p>
+                            <p>Coming-of-age story</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>Mystery & Thriller</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>Gone Girl</h4>
+                            <p>Gillian Flynn</p>
+                            <p>Psychological thriller</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Girl with the Dragon Tattoo</h4>
+                            <p>Stieg Larsson</p>
+                            <p>Crime thriller</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Da Vinci Code</h4>
+                            <p>Dan Brown</p>
+                            <p>Mystery adventure</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Sharp Objects</h4>
+                            <p>Gillian Flynn</p>
+                            <p>Dark psychological thriller</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>Science Fiction</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>Dune</h4>
+                            <p>Frank Herbert</p>
+                            <p>Epic space opera</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Neuromancer</h4>
+                            <p>William Gibson</p>
+                            <p>Cyberpunk classic</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Martian</h4>
+                            <p>Andy Weir</p>
+                            <p>Survival on Mars</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Foundation</h4>
+                            <p>Isaac Asimov</p>
+                            <p>Galactic empire saga</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>Fantasy</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>The Lord of the Rings</h4>
+                            <p>J.R.R. Tolkien</p>
+                            <p>Epic fantasy trilogy</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>A Game of Thrones</h4>
+                            <p>George R.R. Martin</p>
+                            <p>Political fantasy</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Name of the Wind</h4>
+                            <p>Patrick Rothfuss</p>
+                            <p>Coming-of-age fantasy</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Way of Kings</h4>
+                            <p>Brandon Sanderson</p>
+                            <p>Epic fantasy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>Biography & Memoir</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>Becoming</h4>
+                            <p>Michelle Obama</p>
+                            <p>Memoir by former First Lady</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Born a Crime</h4>
+                            <p>Trevor Noah</p>
+                            <p>Stories from apartheid South Africa</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Steve Jobs</h4>
+                            <p>Walter Isaacson</p>
+                            <p>Apple founder's biography</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>I Know Why the Caged Bird Sings</h4>
+                            <p>Maya Angelou</p>
+                            <p>Autobiographical novel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>History</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>Sapiens</h4>
+                            <p>Yuval Noah Harari</p>
+                            <p>Brief history of humankind</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Guns of August</h4>
+                            <p>Barbara Tuchman</p>
+                            <p>WWI history</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>1776</h4>
+                            <p>David McCullough</p>
+                            <p>American Revolution</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Wright Brothers</h4>
+                            <p>David McCullough</p>
+                            <p>Aviation pioneers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>Manga</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>Solo Leveling</h4>
+                            <p>Chu Gong</p>
+                            <p>Story of Sung Jinwoo, the weakest hunter in a world.</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>My Hero Academia</h4>
+                            <p>Kohei Horikoshi</p>
+                            <p>The story follows Izuku Midoriya, a boy born without a Quirk.</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Dragon Ball Super</h4>
+                            <p>Akira Toriyama</p>
+                            <p>Story follows Goku and his friends as they face new threats.</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Attack on Titan</h4>
+                            <p>Hajime Isayama</p>
+                            <p>A dark fantasy anime where humanity fights for survival against giant humanoid creatures called Titans</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>Young Adult</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>The Hunger Games</h4>
+                            <p>Suzanne Collins</p>
+                            <p>Dystopian adventure</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Harry Potter Series</h4>
+                            <p>J.K. Rowling</p>
+                            <p>Magical coming-of-age</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Fault in Our Stars</h4>
+                            <p>John Green</p>
+                            <p>Teen love story</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Divergent</h4>
+                            <p>Veronica Roth</p>
+                            <p>Dystopian society</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h3>Children's Books</h3>
+                    <span>▼</span>
+                </div>
+                <div class="category-content">
+                    <div class="book-list">
+                        <div class="book-item">
+                            <h4>Where the Wild Things Are</h4>
+                            <p>Maurice Sendak</p>
+                            <p>Picture book classic</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>The Very Hungry Caterpillar</h4>
+                            <p>Eric Carle</p>
+                            <p>Beloved children's book</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Charlotte's Web</h4>
+                            <p>E.B. White</p>
+                            <p>Animal friendship story</p>
+                        </div>
+                        <div class="book-item">
+                            <h4>Goodnight Moon</h4>
+                            <p>Margaret Wise Brown</p>
+                            <p>Bedtime classic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="reviews" class="container">
+        <h2 class="section-title">What Our Visitors Say</h2>
+        
+        <div class="review">
+            <div class="review-author">Philip Grah</div>
+            <div class="review-date">March 15, 2023</div>
+            <p>"This library has an incredible selection of books across all genres. The staff is knowledgeable and always ready to recommend something perfect for my mood. The reading areas are cozy and inviting."</p>
+        </div>
+        
+        <div class="review">
+            <div class="review-author">Janai Aboagye</div>
+            <div class="review-date">February 28, 2023</div>
+            <p>"I've discovered so many amazing books through their monthly recommendations display. The sci-fi section is particularly impressive with many rare finds."</p>
+        </div>
+        
+        <div class="review">
+            <div class="review-author">Kwadwo Boadu</div>
+            <div class="review-date">January 10, 2023</div>
+            <p>"The children's section is wonderful - my kids love storytime events. The librarians make reading so much fun for them. We visit at least twice a week!"</p>
+        </div>
+    </section>
+    
+    <section id="hours" style="background-color: var(--primary); color: white;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Opening Hours</h2>
+            <div class="hours">
+                <div class="hour-item">
+                    <strong>Monday - Thursday</strong>
+                    <p>9:00 AM - 8:00 PM</p>
+                </div>
+                <div class="hour-item">
+                    <strong>Friday</strong>
+                    <p>9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="hour-item">
+                    <strong>Saturday</strong>
+                    <p>10:00 AM - 5:00 PM</p>
+                </div>
+                <div class="hour-item">
+                    <strong>Sunday</strong>
+                    <p>12:00 PM - 5:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Book Hive Library</p>
+            <p>Achimota - Accra</p>
+            <p>Phone: (233) 4536-7893-0 | Email: info@bookhivelibrary.org</p>
+            <p>&copy; 2023 Book Hive Library. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="homepage.js"></script>
+</body>
+</html>
